@@ -197,6 +197,16 @@ Salesforce Object Query Language (SOQL) is a SQL-Like interface for salesforce A
 
 Example: `Select Id, Name From Account Where CustomSystem__SomeCustomIdField__c = '{@record.IdField}'`
 
+Retrieve all fields for an object
+
+Ever wanted to run `SELECT * FROM` on SOQL but not been able to? Use the FIELDS() operation to retrieve what you need.
+
+```sql
+SELECT FIELDS(ALL) FROM myx__Custom_Object__c LIMIT 200
+```
+
+You can also use modifiers like FIELDS(STANDARD) or FIELDS(CUSTOM) to get a subset appropriate for your operation. Remember that the `LIMIT` has to be specified explicitly and be below 200
+
 ### SuiteQL
 
 Oracle NetSuite provides the SuiteQL API for retrieving objects from NetSuite
